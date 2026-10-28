@@ -320,17 +320,42 @@ O aplicativo solicita confirmação antes de remover um produto do banco.
 <img width="478" height="869" alt="Exclusão produto" src="https://github.com/user-attachments/assets/f18eeea8-75df-46fe-bc84-910dd5a822ce" />
 
 
-### Persistência de dados com Room
 
-Uma das principais melhorias da Lanchonete V3 foi a implementação da persistência local utilizando Room e SQLite.
+### Demonstração do cadastro e consulta de produtos com Room
 
-Diferentemente das versões anteriores, em que os produtos e itens do carrinho eram armazenados temporariamente na memória, agora essas informações são registradas em um banco de dados local.
+Para demonstrar o funcionamento do banco de dados, realizamos o cadastro de um novo produto chamado **Batata Frita com Cheddar e Bacon**, na categoria Acompanhamentos.
 
-O aplicativo utiliza os DAOs para realizar as operações de cadastro, consulta, edição e exclusão, enquanto o Room gerencia o armazenamento das informações.
+O objetivo foi verificar a inserção de um novo registro no SQLite por meio do Room e sua exibição automática no cardápio.
 
-Dessa forma, os dados não dependem apenas da execução do aplicativo e podem ser recuperados do banco mesmo após seu encerramento.
+**1. Cardápio antes do cadastro**
 
-A integração com Flow também permite que as alterações realizadas no banco sejam refletidas automaticamente nas telas do aplicativo.
+Inicialmente, a categoria Acompanhamentos apresentava apenas os produtos já existentes: Batata Frita e Anéis de Cebola.
+
+<img width="466" height="869" alt="Acompanhamentos - Antes de add produto para teste" src="https://github.com/user-attachments/assets/40a3c20b-32a1-4158-a1a3-24d030f2fa55" />
+
+**2. Cadastro do novo produto**
+
+Na aba Gerenciar, preenchemos o formulário com nome, descrição, preço de R$ 30,00 e categoria Acompanhamentos.
+
+Ao confirmar o cadastro, os dados são enviados ao `ProdutoDao` e armazenados no banco por meio do Room.
+
+<img width="476" height="866" alt="Batata com Cheddar" src="https://github.com/user-attachments/assets/2aab3c8f-dd10-42f5-ae9a-7b7a6f7e760a" />
+
+**3. Cardápio após o cadastro**
+
+Após a inserção, o novo produto passou a aparecer automaticamente na categoria Acompanhamentos, junto aos dois produtos anteriores.
+
+<img width="478" height="861" alt="Prova cadastr da batata" src="https://github.com/user-attachments/assets/997c66fc-23af-42a3-bebb-526636955c19" />
+
+
+### Resultado
+
+O procedimento demonstrou o funcionamento das operações de cadastro (*Create*) e consulta (*Read*) utilizando Room.
+
+A atualização automática do cardápio ocorre por meio do `Flow`, que permite à interface observar as alterações realizadas no banco de dados.
+
+Com isso, novos produtos podem ser adicionados e consultados sem a necessidade de modificar manualmente as listas do código-fonte.
+
 
 
 ## 13. Escopo e limitações
