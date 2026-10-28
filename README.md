@@ -231,7 +231,7 @@ Os dados são armazenados localmente no SQLite do dispositivo.
 
 Para demonstrar o funcionamento do Room, o teste deve contemplar as seguintes etapas:
 
-- [ ] Cadastrar um novo produto.
+- [ x] Cadastrar um novo produto.
 - [ ] Consultar o produto no cardápio.
 - [ ] Editar as informações cadastradas.
 - [ ] Abrir a tela de detalhes e consultar o item por ID.
