@@ -275,49 +275,49 @@ Nesta seção estão reunidas as principais telas da Lanchonete V3, incluindo as
 
 Apresenta as categorias disponíveis e os produtos em destaque.
 
-![Tela inicial da Lanchonete](./imagens/tela-inicial.png)
+<img width="464" height="873" alt="Tela Inicial" src="https://github.com/user-attachments/assets/f1f912ac-51d8-40d9-81ab-686690935e99" />
 
 ### Cardápio
 
 Lista os produtos cadastrados, com opções de pesquisa e filtros por categoria.
 
-![Cardápio da Lanchonete](./imagens/cardapio.png)
+<img width="475" height="865" alt="Cardápio" src="https://github.com/user-attachments/assets/54fd3d6b-5dd3-4a48-81ec-d3b9953dd974" />
 
 ### Detalhes do produto
 
 Exibe as informações do produto consultado no banco a partir do seu identificador.
 
-![Detalhes do produto](./imagens/detalhes-produto.png)
+<img width="467" height="863" alt="Detalhe Produto" src="https://github.com/user-attachments/assets/988d9065-7663-4d54-9807-d8f73931f255" />
 
 ### Carrinho de compras
 
 Permite visualizar os produtos selecionados, alterar quantidades e consultar o valor total do pedido.
 
-![Carrinho de compras](./imagens/carrinho.png)
+<img width="467" height="861" alt="Carrinho" src="https://github.com/user-attachments/assets/619832d2-d44e-443a-ad44-34743c5253e9" />
 
 ### Gerenciamento de produtos
 
 A nova aba permite visualizar os registros armazenados no Room, cadastrar produtos e acessar as operações de edição e exclusão.
 
-![Gerenciamento de produtos](./imagens/gerenciamento.png)
+<img width="475" height="859" alt="Gerenciamento" src="https://github.com/user-attachments/assets/56d5ae8c-2fcd-4a90-aa24-01a7c95c5886" />
 
 ### Cadastro de produto
 
 Formulário utilizado para inserir um novo produto diretamente no banco de dados.
 
-![Cadastro de produto](./imagens/cadastro.png)
+<img width="458" height="864" alt="Cadastro Produto" src="https://github.com/user-attachments/assets/54d2523c-2820-4361-bb80-05c93c23cf62" />
 
 ### Edição de produto
 
 Permite modificar os dados de um produto existente e salvar as alterações no Room.
 
-![Edição de produto](./imagens/edicao.png)
+<img width="471" height="870" alt="Edição Produto" src="https://github.com/user-attachments/assets/c5f5a797-2655-496c-943e-4795393568d3" />
 
 ### Exclusão de produto
 
 O aplicativo solicita confirmação antes de remover um produto do banco.
 
-![Exclusão de produto](./imagens/exclusao.png)
+<img width="478" height="869" alt="Exclusão produto" src="https://github.com/user-attachments/assets/f18eeea8-75df-46fe-bc84-910dd5a822ce" />
 
 ### Persistência após reabrir o aplicativo
 
