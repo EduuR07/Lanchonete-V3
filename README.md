@@ -227,31 +227,111 @@ Na primeira inicialização, os produtos de exemplo são cadastrados no banco qu
 
 Os dados são armazenados localmente no SQLite do dispositivo.
 
-## 11. Testes de persistência
+## 11. Funcionamento do CRUD e persistência dos dados
 
-Para demonstrar o funcionamento do Room, o teste deve contemplar as seguintes etapas:
+A terceira versão conta com as quatro operações fundamentais do CRUD, integradas ao banco de dados Room.
 
-- [ x] Cadastrar um novo produto.
-- [ ] Consultar o produto no cardápio.
-- [ ] Editar as informações cadastradas.
-- [ ] Abrir a tela de detalhes e consultar o item por ID.
-- [ ] Adicionar produtos ao carrinho.
-- [ ] Fechar completamente o aplicativo.
-- [ ] Reabrir e verificar se os dados continuam salvos.
-- [ ] Excluir o produto cadastrado.
-- [ ] Fechar e reabrir novamente, verificando que ele permanece excluído.
+### Cadastro de produtos — Create
 
-**Os itens devem ser marcados conforme os testes forem realizados pelo grupo.**
+A aplicação permite cadastrar novos produtos informando nome, descrição, preço e categoria. Os dados são inseridos diretamente no banco SQLite por meio do `ProdutoDao`.
 
-### Evidências
+Após o cadastro, os novos produtos passam a integrar o cardápio do aplicativo.
 
-As capturas de tela dos testes serão disponibilizadas na pasta `docs/evidencias/`.
+### Consulta de produtos — Read
 
-**Vídeo demonstrando a persistência:** [INSERIR LINK DO VÍDEO]
+O cardápio apresenta os produtos armazenados no Room, permitindo realizar pesquisas e filtrar os itens por categoria.
 
-O vídeo deve mostrar o cadastro, a edição, o fechamento e a reabertura do aplicativo, além da exclusão do registro.
+Ao selecionar um produto, a tela de detalhes consulta suas informações utilizando o identificador registrado no banco.
 
-## 12. Escopo e limitações
+### Atualização de produtos — Update
+
+A aba Gerenciar permite selecionar um produto existente e modificar suas informações.
+
+Após salvar, os dados são atualizados no banco e as alterações são refletidas automaticamente nas telas que observam os produtos.
+
+### Exclusão de produtos — Delete
+
+Os produtos podem ser removidos pela aba Gerenciar, mediante confirmação do usuário.
+
+A exclusão é realizada diretamente no banco, removendo o registro da listagem e do cardápio.
+
+### Persistência local com Room
+
+A principal melhoria da V3 foi substituir o armazenamento temporário em memória por um banco de dados SQLite gerenciado pelo Room.
+
+Dessa forma, os produtos cadastrados, suas alterações e os itens do carrinho são mantidos no armazenamento local do dispositivo.
+
+O aplicativo foi estruturado para recuperar essas informações quando é aberto novamente, sem depender de listas fixas para reconstruir os dados.
+
+O teste de persistência consiste em cadastrar e editar um produto, fechar completamente o aplicativo e reabri-lo para conferir se as informações continuam disponíveis. O mesmo procedimento pode ser realizado com a exclusão, verificando que o item removido não reaparece.
+
+As capturas de tela da próxima seção servem para documentar o funcionamento dessas operações.
+
+## 12. Capturas de tela do aplicativo
+
+Nesta seção estão reunidas as principais telas da Lanchonete V3, incluindo as funcionalidades existentes e o gerenciamento de produtos implementado com Room.
+
+### Tela inicial
+
+Apresenta as categorias disponíveis e os produtos em destaque.
+
+![Tela inicial da Lanchonete](./imagens/tela-inicial.png)
+
+### Cardápio
+
+Lista os produtos cadastrados, com opções de pesquisa e filtros por categoria.
+
+![Cardápio da Lanchonete](./imagens/cardapio.png)
+
+### Detalhes do produto
+
+Exibe as informações do produto consultado no banco a partir do seu identificador.
+
+![Detalhes do produto](./imagens/detalhes-produto.png)
+
+### Carrinho de compras
+
+Permite visualizar os produtos selecionados, alterar quantidades e consultar o valor total do pedido.
+
+![Carrinho de compras](./imagens/carrinho.png)
+
+### Gerenciamento de produtos
+
+A nova aba permite visualizar os registros armazenados no Room, cadastrar produtos e acessar as operações de edição e exclusão.
+
+![Gerenciamento de produtos](./imagens/gerenciamento.png)
+
+### Cadastro de produto
+
+Formulário utilizado para inserir um novo produto diretamente no banco de dados.
+
+![Cadastro de produto](./imagens/cadastro.png)
+
+### Edição de produto
+
+Permite modificar os dados de um produto existente e salvar as alterações no Room.
+
+![Edição de produto](./imagens/edicao.png)
+
+### Exclusão de produto
+
+O aplicativo solicita confirmação antes de remover um produto do banco.
+
+![Exclusão de produto](./imagens/exclusao.png)
+
+### Persistência após reabrir o aplicativo
+
+Comparação do estado dos dados antes do encerramento e depois da reabertura do aplicativo, para comprovar que os registros são recuperados do banco local.
+
+**Antes de fechar o aplicativo:**
+
+![Dados antes de fechar o aplicativo](./imagens/persistencia-antes.png)
+
+**Após reabrir o aplicativo:**
+
+![Dados preservados após reabrir](./imagens/persistencia-depois.png)
+
+## 13. Escopo e limitações
 
 O projeto utiliza exclusivamente um banco local do dispositivo Android.
 
@@ -259,7 +339,7 @@ Não foram implementados servidor remoto, autenticação, APIs externas ou sincr
 
 O fluxo de pagamento é demonstrativo e não realiza transações financeiras reais.
 
-## 13. Integrantes e entrega
+## 14. Integrantes e entrega
 
 **Instituição:** Universidade Positivo
 
@@ -271,8 +351,6 @@ O fluxo de pagamento é demonstrativo e não realiza transações financeiras re
 - Eduardo Rodrigues Bueno
 - Eduardo Serviam Betio Gomes
 - Matheus Machado Komninou
-
-**Data da entrega:** Conforme prazo definido no Blackboard.
 
 **Projeto:** Trabalho 3 — Persistência de Dados com Room
 
