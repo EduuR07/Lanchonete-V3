@@ -319,17 +319,19 @@ O aplicativo solicita confirmação antes de remover um produto do banco.
 
 <img width="478" height="869" alt="Exclusão produto" src="https://github.com/user-attachments/assets/f18eeea8-75df-46fe-bc84-910dd5a822ce" />
 
-### Persistência após reabrir o aplicativo
 
-Comparação do estado dos dados antes do encerramento e depois da reabertura do aplicativo, para comprovar que os registros são recuperados do banco local.
+### Persistência de dados com Room
 
-**Antes de fechar o aplicativo:**
+Uma das principais melhorias da Lanchonete V3 foi a implementação da persistência local utilizando Room e SQLite.
 
-![Dados antes de fechar o aplicativo](./imagens/persistencia-antes.png)
+Diferentemente das versões anteriores, em que os produtos e itens do carrinho eram armazenados temporariamente na memória, agora essas informações são registradas em um banco de dados local.
 
-**Após reabrir o aplicativo:**
+O aplicativo utiliza os DAOs para realizar as operações de cadastro, consulta, edição e exclusão, enquanto o Room gerencia o armazenamento das informações.
 
-![Dados preservados após reabrir](./imagens/persistencia-depois.png)
+Dessa forma, os dados não dependem apenas da execução do aplicativo e podem ser recuperados do banco mesmo após seu encerramento.
+
+A integração com Flow também permite que as alterações realizadas no banco sejam refletidas automaticamente nas telas do aplicativo.
+
 
 ## 13. Escopo e limitações
 
